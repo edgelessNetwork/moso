@@ -34,6 +34,7 @@ const config: HardhatUserConfig = {
           apiUrl: "https://edgeless-testnet.explorer.caldera.xyz/",
         },
       },
+      gasPrice: 100_000_000
     },
   },
   etherscan: {
@@ -53,13 +54,13 @@ const config: HardhatUserConfig = {
   },
   namedAccounts: {
     deployer: {
-      edgelessTestnet: "0x08C6fBA53BF2Ae19DBdC330E258B510c1C148e44",
+      edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
     owner: {
-      edgelessTestnet: "0x08C6fBA53BF2Ae19DBdC330E258B510c1C148e44",
+      edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
     sender: {
-      edgelessTestnet: "0x08C6fBA53BF2Ae19DBdC330E258B510c1C148e44",
+      edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
   },
 };
