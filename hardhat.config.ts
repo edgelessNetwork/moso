@@ -34,12 +34,25 @@ const config: HardhatUserConfig = {
           apiUrl: "https://edgeless-testnet.explorer.caldera.xyz/",
         },
       },
-      gasPrice: 100_000_000
+      gasPrice: 100_000_000,
+    },
+    edgeless: {
+      deploy: ["./deploy/edgeless/"],
+      url: "https://rpc.edgeless.network/http",
+      chainId: 2026,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY!],
+      verify: {
+        etherscan: {
+          apiUrl: "https://explorer.edgeless.network/",
+        },
+      },
+      gasPrice: 10_000_000,
     },
   },
   etherscan: {
     apiKey: {
       edgelessTestnet: "You can enter any api key here, it doesn't matter ",
+      edgeless: "You can enter any api key here, it doesn't matter"
     },
     customChains: [
       {
@@ -50,17 +63,28 @@ const config: HardhatUserConfig = {
           browserURL: "https://edgeless-testnet.explorer.caldera.xyz/",
         },
       },
+      {
+        network: "edgeless",
+        chainId: 2026,
+        urls: {
+          apiURL: "https://explorer.edgeless.network/api/",
+          browserURL: "https://explorer.edgeless.network/",
+        },
+      },
     ],
   },
   namedAccounts: {
     deployer: {
       edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
+      edgeless: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
     owner: {
       edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
+      edgeless: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
     sender: {
       edgelessTestnet: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
+      edgeless: "0xeeaB6e1e1b358118879E3e0F4687BE54b1454666",
     },
   },
 };
